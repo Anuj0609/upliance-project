@@ -3,6 +3,7 @@ import { useSpring, animated } from "@react-spring/web";
 
 function Counter() {
   const [count, setCount] = useState(0);
+  const [isOpen, setIsClick]=useState(false)
 
   useEffect(() => {
     const storedCount = localStorage.getItem("counter");
@@ -29,11 +30,13 @@ function Counter() {
 
   return (
     // @ts-expect-error to-do figureout later
+
+  
     <animated.div
       style={backgroundStyle}
-      className="w-full h-full p-6 flex flex-col justify-center items-center rounded-lg transition-all duration-500 m-10"
+      className="w-full h-full p-24 m-6 md:p-6 flex flex-col justify-center items-center rounded-lg transition-all duration-500  md:m-5"
     >
-      <div className=" text-4xl font-semibold mb-4 text-black">
+      <div className=" md:text-4xl font-semibold mb-2 md:mb-4 text-black">
         Counter: {count}
       </div>
       <div className="flex gap-4">

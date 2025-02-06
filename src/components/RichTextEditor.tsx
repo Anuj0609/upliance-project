@@ -46,20 +46,20 @@ function RichTextEditor() {
   }, [content, editor]);
 
   return (
-    <div className="w-full h-full m-10 p-6 bg-slate-700 shadow-lg rounded-lg">
+    <div className="w-full h-full md:m-10 p-6 bg-slate-700 shadow-lg rounded-lg">
       <h2 className="text-xl font-semibold mb-4 text-center">
         Rich Text Editor
       </h2>
 
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap gap-2 mb-4 justify-center">
         <button
-          className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+          className=" px-2 md:px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
           onClick={() => editor?.chain().focus().toggleBold().run()}
         >
           Bold
         </button>
         <button
-          className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
+          className="px-2 md:px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
           onClick={() => editor?.chain().focus().toggleItalic().run()}
         >
           Italic

@@ -70,10 +70,10 @@ function UserDataForm() {
 
   return (
     <div className="w-full p-6 ">
-      <div className="flex space-x-6">
+      <div className="flex flex-col md:flex-row  ">
         <form
           onSubmit={handleSubmit}
-          className="space-y-4 w-1/2 bg-gray-300 p-6 m-5"
+          className="space-y-4 w-full md:w-1/2 bg-gray-300 p-6 md:m-5 rounded"
         >
           <div className="flex flex-col">
             <div className="text-2xl font-semibold text-center mb-6">
@@ -132,7 +132,7 @@ function UserDataForm() {
         </form>
 
         {savedData ? (
-          <div className="w-1/2 m-5 p-6 rounded bg-gray-400">
+          <div className="w-full md:w-1/2 md:m-5  p-10 md:p-6 rounded bg-gray-400">
             <h3 className="text-lg font-semibold mb-2">Saved User Data:</h3>
             <p>
               <strong>Name:</strong> {savedData.name}
@@ -148,7 +148,7 @@ function UserDataForm() {
             </p>
           </div>
         ) : (
-          <div className="w-1/2 m-5 p-6 rounded bg-gray-400">
+          <div className="w-full md:w-1/2 md:m-5 p-6 rounded bg-gray-400">
             <h3 className="text-lg font-semibold mb-2">No Data Available</h3>
             <p className="text-gray-700">
               Please submit the form with your details to view the saved

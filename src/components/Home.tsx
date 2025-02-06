@@ -20,11 +20,11 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="flex w-full h-1/2">
-        <div className="w-1/2 flex justify-center items-center p-4">
+      <div className="flex w-full md:h-1/2 md:flex-row flex-col">
+        <div className="w-full md:w-1/2 flex justify-center items-center p-4">
           <Counter />
         </div>
-        <div className="w-1/2 flex justify-center items-center p-4">
+        <div className="w-full md:w-1/2 flex justify-center items-center p-4">
           <RichTextEditor />
         </div>
       </div>
