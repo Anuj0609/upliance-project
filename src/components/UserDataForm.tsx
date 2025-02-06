@@ -8,11 +8,10 @@ function UserDataForm() {
     phone: "",
   });
 
-  const [userId, setUserId] = useState<string | null>(null);
+  // const [userId, setUserId] = useState<string | null>(null);
   const [savedData, setSavedData] = useState<typeof formData | null>(null);
   const [isFormModified, setIsFormModified] = useState(false);
 
-  // Load saved data on refresh
   useEffect(() => {
     const storedUserId = localStorage.getItem("userId");
     if (storedUserId) {
@@ -20,7 +19,7 @@ function UserDataForm() {
       if (savedUserData) {
         setSavedData(JSON.parse(savedUserData));
       }
-      setUserId(storedUserId);
+      // setUserId(storedUserId);
     }
   }, []);
 
@@ -37,10 +36,10 @@ function UserDataForm() {
     e.preventDefault();
 
     const generatedUserId = `user-${Math.random().toString(36).substr(2, 9)}`;
-    setUserId(generatedUserId);
+    // setUserId(generatedUserId);
 
     localStorage.setItem(generatedUserId, JSON.stringify(formData));
-    localStorage.setItem("userId", generatedUserId); 
+    localStorage.setItem("userId", generatedUserId);
     setSavedData(formData);
     setIsFormModified(false);
 
@@ -123,7 +122,7 @@ function UserDataForm() {
 
           <button
             type="submit"
-            disabled={!isFormValid} 
+            disabled={!isFormValid}
             className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition"
           >
             Submit

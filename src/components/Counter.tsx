@@ -28,6 +28,7 @@ function Counter() {
   });
 
   return (
+    // @ts-expect-error to-do figureout later
     <animated.div
       style={backgroundStyle}
       className="w-full h-full p-6 flex flex-col justify-center items-center rounded-lg transition-all duration-500 m-10"

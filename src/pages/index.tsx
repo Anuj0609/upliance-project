@@ -1,7 +1,6 @@
 import Counter from "@/components/Counter";
 import RichTextEditor from "@/components/RichTextEditor";
 import UserDataForm from "@/components/UserDataForm";
-import SignIn from "@/components/googleSignin/signIn";
 
 export default function Home() {
   return (
