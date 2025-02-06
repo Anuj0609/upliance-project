@@ -1,27 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import {signInWithPopup} from "firebase/auth"
-import { auth, googleProvider } from '@/components/googleSignin/firebaseConfig';
-import Home from '@/components/Home';
-
- 
+import React, { useEffect, useState } from "react";
+import { signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "@/components/googleSignin/firebaseConfig";
+import Home from "@/components/Home";
 
 function SignIn() {
   const [value, setValue] = useState<string>("");
 
   const handleClick = () => {
     signInWithPopup(auth, googleProvider).then((data) => {
-      const email = data.user.email ?? ""; 
+      const email = data.user.email ?? "";
       setValue(email);
       localStorage.setItem("email", email);
     });
   };
 
+  const bypassSignIn = () => {
+    setValue("dummyEmail@example.com"); 
+    localStorage.setItem("email", "dummyEmail@example.com");
+  };
+
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
     if (storedEmail) {
-      setValue(storedEmail ?? ""); 
+      setValue(storedEmail ?? "");
     }
   }, []);
+
   return (
     <div>
       {value ? (
@@ -48,7 +52,7 @@ function SignIn() {
               onClick={handleClick}
               className="flex items-center gap-3 px-8 py-4 font-semibold text-white rounded-xl
         bg-white/20 backdrop-blur-md border border-white/30
-        hover:bg-white/30 transform transition-all duration-200 
+        hover:bg-white/30 transform transition-all duration-200
         hover:scale-105 hover:shadow-xl"
             >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -71,7 +75,15 @@ function SignIn() {
               </svg>
               <span className="text-lg">Sign in with Google</span>
             </button>
-
+            <button
+              onClick={bypassSignIn}
+              className="flex items-center gap-3 px-16 py-4 font-semibold text-white rounded-2xl
+        bg-white/20 backdrop-blur-md border border-white/30
+        hover:bg-white/30 transform transition-all duration-200
+        hover:scale-105 hover:shadow-xl"
+            >
+              OneClick Sign In
+            </button>
             <p className="text-white/70 text-sm mt-4">
               By signing in, you agree to our Terms of Service and Privacy
               Policy
