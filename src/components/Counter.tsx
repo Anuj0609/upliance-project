@@ -3,7 +3,6 @@ import { useSpring, animated } from "@react-spring/web";
 
 function Counter() {
   const [count, setCount] = useState(0);
-  const [isOpen, setIsClick]=useState(false)
 
   useEffect(() => {
     const storedCount = localStorage.getItem("counter");
