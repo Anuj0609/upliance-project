@@ -10,7 +10,6 @@ export default function Home() {
 
   return (
     <div className="h-screen flex flex-col bg-slate-100">
-      {/* Title and Logout Button */}
       <div className="flex justify-between items-center p-4">
         <span className="text-xl font-bold">upliance.ai</span>
         <button
@@ -21,7 +20,6 @@ export default function Home() {
         </button>
       </div>
 
-      {/* Content */}
       <div className="flex w-full h-1/2">
         <div className="w-1/2 flex justify-center items-center p-4">
           <Counter />

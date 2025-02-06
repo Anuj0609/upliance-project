@@ -27,18 +27,14 @@ function SignIn() {
       {value ? (
         <Home />
       ) : (
-        // Parent container - this will be your full screen wrapper
         <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-500 to-green-400">
-          {/* Header */}
           <div className="p-6">
             <h1 className="text-4xl font-bold text-white tracking-wider">
               upliance<span className="text-green-300">.ai</span>
             </h1>
           </div>
 
-          {/* Button container */}
           <div className="flex flex-col justify-center items-center w-screen h-[calc(100vh-100px)] gap-8">
-            {/* Welcome text */}
             <div className="text-center">
               <h2 className="text-3xl font-bold text-white mb-2">
                 Welcome to Upliance
@@ -48,7 +44,6 @@ function SignIn() {
               </p>
             </div>
 
-            {/* Sign in button with glass effect */}
             <button
               onClick={handleClick}
               className="flex items-center gap-3 px-8 py-4 font-semibold text-white rounded-xl
@@ -77,7 +72,6 @@ function SignIn() {
               <span className="text-lg">Sign in with Google</span>
             </button>
 
-            {/* Footer text */}
             <p className="text-white/70 text-sm mt-4">
               By signing in, you agree to our Terms of Service and Privacy
               Policy
