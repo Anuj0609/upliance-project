@@ -17,9 +17,11 @@ function UserDataForm() {
     if (storedUserId) {
       const savedUserData = localStorage.getItem(storedUserId);
       if (savedUserData) {
-        setSavedData(JSON.parse(savedUserData));
+        const parsedData = JSON.parse(savedUserData);
+        setSavedData(parsedData);
+        // Initialize form with saved data
+        setFormData(parsedData);
       }
-      // setUserId(storedUserId);
     }
   }, []);
 
@@ -129,7 +131,7 @@ function UserDataForm() {
           </button>
         </form>
 
-        {savedData && (
+        {savedData ? (
           <div className="w-1/2 m-5 p-6 rounded bg-gray-400">
             <h3 className="text-lg font-semibold mb-2">Saved User Data:</h3>
             <p>
@@ -143,6 +145,14 @@ function UserDataForm() {
             </p>
             <p>
               <strong>Phone:</strong> {savedData.phone}
+            </p>
+          </div>
+        ) : (
+          <div className="w-1/2 m-5 p-6 rounded bg-gray-400">
+            <h3 className="text-lg font-semibold mb-2">No Data Available</h3>
+            <p className="text-gray-700">
+              Please submit the form with your details to view the saved
+              information here.
             </p>
           </div>
         )}

@@ -92,7 +92,7 @@ function RichTextEditor() {
       </div>
 
       <div className="border p-3 rounded bg-gray-50 min-h-[200px]">
-        <EditorContent editor={editor} />
+        <EditorContent className="min-h-200" editor={editor} />
       </div>
     </div>
   );
